@@ -101,13 +101,11 @@
 		E182DFB6259C68D60073A9AB /* FavRestaurants */ = {
 			isa = PBXGroup;
 			children = (
+				E182DFC8259C68D60073A9AB /* Info.plist */,
+				E182DFED259C69C50073A9AB /* Assets */,
 				E182DFB7259C68D60073A9AB /* AppDelegate.swift */,
 				E182DFB9259C68D60073A9AB /* SceneDelegate.swift */,
 				E182DFBB259C68D60073A9AB /* ViewController.swift */,
-				E182DFBD259C68D60073A9AB /* Main.storyboard */,
-				E182DFC3259C68D60073A9AB /* Assets.xcassets */,
-				E182DFC5259C68D60073A9AB /* LaunchScreen.storyboard */,
-				E182DFC8259C68D60073A9AB /* Info.plist */,
 				E182DFC0259C68D60073A9AB /* FavRestaurants.xcdatamodeld */,
 			);
 			path = FavRestaurants;
@@ -129,6 +127,16 @@
 				E182DFDE259C68D70073A9AB /* Info.plist */,
 			);
 			path = FavRestaurantsUITests;
+			sourceTree = "<group>";
+		};
+		E182DFED259C69C50073A9AB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E182DFBD259C68D60073A9AB /* Main.storyboard */,
+				E182DFC5259C68D60073A9AB /* LaunchScreen.storyboard */,
+				E182DFC3259C68D60073A9AB /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
