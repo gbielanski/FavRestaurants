@@ -7,10 +7,12 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 class FindRestaurantViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
-  
+  @IBOutlet weak var mapView: MKMapView!
+
   @IBOutlet weak var couldNotFind: UILabel!
   @IBOutlet weak var lookingForLabel: UILabel!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -20,8 +22,11 @@ class FindRestaurantViewController: UIViewController {
     super.viewDidLoad()
     tableView.delegate = self
     tableView.dataSource = self
+    mapView.delegate = self
+    // Warsaw Centrum
     ZomatoClient.getRestaurantsInLocation(lat: 52.231003, lon: 21.011682){ restaurants, error in
-      
+    // Zielonka
+    // ZomatoClient.getRestaurantsInLocation(lat: 52.313758, lon: 21.170652){ restaurants, error in
       if let error = error {
         self.showFailure(message: error.localizedDescription)
         return
@@ -34,6 +39,7 @@ class FindRestaurantViewController: UIViewController {
         self.showNoResults()
       }else{
         self.tableView.reloadData()
+        self.updateMap()
       }
     }
   }
@@ -51,6 +57,39 @@ class FindRestaurantViewController: UIViewController {
   private func showNoResults(){
     tableView.isHidden = true
     couldNotFind.isHidden = false
+  }
+
+  private func updateMap(){
+    guard let foundRestaurants = restaurants else {
+      return
+    }
+
+    var annotations = [MKPointAnnotation]()
+
+    if foundRestaurants.count > 0 {
+      let centerLocation = CLLocation(
+        latitude: CLLocationDegrees(foundRestaurants[0].data.location.latitude)!,
+        longitude: CLLocationDegrees(foundRestaurants[0].data.location.longitude)!)
+      let span = MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
+      let region = MKCoordinateRegion(center: centerLocation.coordinate, span: span)
+      mapView.setRegion(region, animated: false)
+    }
+
+    for restaurant in foundRestaurants {
+
+      let lat = CLLocationDegrees(restaurant.data.location.latitude)!
+      let long = CLLocationDegrees(restaurant.data.location.longitude)!
+
+      let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+
+      let annotation = MKPointAnnotation()
+      annotation.coordinate = coordinate
+      annotation.title = "\(restaurant.data.name)"
+
+      annotations.append(annotation)
+    }
+
+    self.mapView.addAnnotations(annotations)
   }
   
   private func showFailure(message: String) {
@@ -92,5 +131,26 @@ extension FindRestaurantViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     return cell
+  }
+}
+
+extension FindRestaurantViewController: MKMapViewDelegate{
+  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+
+    let reuseId = "pin"
+
+    var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+
+    if pinView == nil {
+      pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+      pinView!.canShowCallout = true
+      pinView!.pinTintColor = .red
+      pinView!.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+    }
+    else {
+      pinView!.annotation = annotation
+    }
+
+    return pinView
   }
 }

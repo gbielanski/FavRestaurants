@@ -213,6 +213,7 @@
                         <outlet property="activityIndicator" destination="cyt-eo-xJb" id="tkf-wS-QRc"/>
                         <outlet property="couldNotFind" destination="3bc-Hm-QGT" id="qyZ-Pc-cWh"/>
                         <outlet property="lookingForLabel" destination="VDy-MB-J4R" id="Dko-4t-6n5"/>
+                        <outlet property="mapView" destination="eaW-VP-qVC" id="g8S-F3-lph"/>
                         <outlet property="tableView" destination="bAC-LY-cVB" id="zlw-0V-WTm"/>
                     </connections>
                 </viewController>

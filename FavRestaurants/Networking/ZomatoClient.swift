@@ -20,18 +20,18 @@ class ZomatoClient {
       return value
     }
   }
-  
+
   enum Endpoints {
     static let base = "https://developers.zomato.com/api/v2.1/search"
-    static let count = 20
+    static let count = 10
     static let radius = 100
     static let sort = "real_distance"
     static let order = "desc"
     static let start = "0"
-    
+
     case getRestaurantsInLocation(String, String)
     case downloadImage(String)
-    
+
     var stringValue: String {
       switch self {
       case .getRestaurantsInLocation(let latitude, let longitude): return Endpoints.base +
@@ -45,22 +45,22 @@ class ZomatoClient {
       case .downloadImage(let path): return path
       }
     }
-    
+
     var url: URL {
       return URL(string: stringValue)!
     }
   }
-  
+
   class func downloadImage(path: String, completionHandler: @escaping (Data?, Error?) -> Void){
     let download = URLSession.shared.dataTask(with: Endpoints.downloadImage(path).url){ (data, _, error) in
       DispatchQueue.main.async {
         completionHandler(data, error)
       }
     }
-    
+
     download.resume()
   }
-  
+
   class func getRestaurantsInLocation(lat: Double, lon: Double, completion: @escaping ([Restaurant]?, Error?) -> Void) {
     let url = Endpoints.getRestaurantsInLocation("\(lat)", "\(lon)").url
     taskForGETRequest(url: url, responseType: SearchResponse.self){ (response, error)
@@ -72,15 +72,15 @@ class ZomatoClient {
       }
     }
   }
-  
+
   class func taskForGETRequest<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void){
-    
+
     var request = URLRequest(url: url)
     request.httpMethod = "GET"
-    
+
     request.addValue("application/json", forHTTPHeaderField: "Accept")
     request.addValue("\(ZomatoClient.apiKey)", forHTTPHeaderField: "user-key")
-    
+
     let task = URLSession.shared.dataTask(with: request) { data, response, error in
       guard let data = data else {
         DispatchQueue.main.async {
@@ -88,9 +88,9 @@ class ZomatoClient {
         }
         return
       }
-      
+
       print(String(data: data, encoding: .utf8)!)
-      
+
       let decoder = JSONDecoder()
       do {
         let responseObject = try decoder.decode(ResponseType.self, from: data)
