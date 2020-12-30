@@ -30,6 +30,7 @@ class ZomatoClient {
     static let start = "0"
 
     case getRestaurantsInLocation(String, String)
+    case downloadImage(String)
 
     var stringValue: String {
       switch self {
@@ -41,12 +42,23 @@ class ZomatoClient {
         "&radius=\(Endpoints.radius)" +
         "&sort=\(Endpoints.sort)" +
         "&order=\(Endpoints.order)"
+      case .downloadImage(let path): return path
       }
     }
 
     var url: URL {
       return URL(string: stringValue)!
     }
+  }
+
+  class func downloadImage(path: String, completionHandler: @escaping (Data?, Error?) -> Void){
+    let download = URLSession.shared.dataTask(with: Endpoints.downloadImage(path).url){ (data, _, error) in
+        DispatchQueue.main.async {
+            completionHandler(data, error)
+        }
+    }
+
+    download.resume()
   }
 
   class func getRestaurantsInLocation(lat: Double, lon: Double, completion: @escaping ([Restaurant]?, Error?) -> Void) {
@@ -60,7 +72,6 @@ class ZomatoClient {
       }
     }
   }
-
 
   class func taskForGETRequest<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void){
 

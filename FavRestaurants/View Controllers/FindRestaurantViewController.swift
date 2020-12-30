@@ -62,6 +62,21 @@ extension FindRestaurantViewController: UITableViewDelegate, UITableViewDataSour
     cell.detailTextLabel?.text = restaurant.data.location.address
     cell.imageView?.image = UIImage(named: "launch")
 
+    let path = restaurant.data.featuredImage
+
+    if !path.isEmpty {
+      ZomatoClient.downloadImage(path: path){ data, error in
+        guard let data = data else {
+          return
+        }
+
+        if let image = UIImage(data: data){
+          cell.imageView?.image = image
+          cell.setNeedsLayout()
+        }
+      }
+    }
+
     return cell
   }
 
