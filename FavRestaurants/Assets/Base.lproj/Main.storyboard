@@ -43,21 +43,38 @@
             </objects>
             <point key="canvasLocation" x="574" y="283"/>
         </scene>
-        <!--View Controller-->
+        <!--Favourite Restaurants Map-->
         <scene sceneID="RMA-16-mCp">
             <objects>
                 <viewController id="B0y-Kx-59j" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QnU-FP-6Mh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0V-BQ-wyl" userLabel="Add Button">
+                                <rect key="frame" x="16" y="773" width="382" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="oPz-aI-M1U"/>
+                                </constraints>
+                                <state key="normal" image="plus" catalog="system"/>
+                                <connections>
+                                    <segue destination="V54-8J-sag" kind="show" id="t83-1g-QXm"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9HS-jB-REJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V0V-BQ-wyl" firstAttribute="leading" secondItem="9HS-jB-REJ" secondAttribute="leading" constant="16" id="7iR-mw-Jkb"/>
+                            <constraint firstItem="9HS-jB-REJ" firstAttribute="trailing" secondItem="V0V-BQ-wyl" secondAttribute="trailing" constant="16" id="P0b-gw-hBB"/>
+                            <constraint firstItem="9HS-jB-REJ" firstAttribute="bottom" secondItem="V0V-BQ-wyl" secondAttribute="bottom" id="m56-H6-2Dn"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="IpW-yu-l8R"/>
+                    <navigationItem key="navigationItem" title="Favourite Restaurants Map" id="IpW-yu-l8R"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hYU-Wf-Gzf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1661" y="283"/>
+            <point key="canvasLocation" x="1577" y="283"/>
         </scene>
         <!--List-->
         <scene sceneID="IeC-Iy-G3J">
@@ -77,26 +94,100 @@
             </objects>
             <point key="canvasLocation" x="575" y="-406"/>
         </scene>
-        <!--View Controller-->
+        <!--Favourite Restaurants List-->
         <scene sceneID="Wmn-Gx-1Wl">
             <objects>
                 <viewController id="hPT-Tz-GST" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FXS-5u-7AO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijr-bl-tlO" userLabel="Add Button">
+                                <rect key="frame" x="16" y="773" width="382" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bRD-eg-mv9"/>
+                                </constraints>
+                                <state key="normal" image="plus" catalog="system"/>
+                                <connections>
+                                    <segue destination="V54-8J-sag" kind="show" id="YNy-hP-nZQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="grV-8L-txt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="grV-8L-txt" firstAttribute="bottom" secondItem="ijr-bl-tlO" secondAttribute="bottom" id="4BI-s6-1QR"/>
+                            <constraint firstItem="grV-8L-txt" firstAttribute="trailing" secondItem="ijr-bl-tlO" secondAttribute="trailing" constant="16" id="LuA-pU-XNR"/>
+                            <constraint firstItem="ijr-bl-tlO" firstAttribute="leading" secondItem="grV-8L-txt" secondAttribute="leading" constant="16" id="SGQ-Aj-iQg"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="rfc-cg-caV"/>
+                    <navigationItem key="navigationItem" title="Favourite Restaurants List" id="rfc-cg-caV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P2J-OC-vLa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1635" y="-406"/>
+            <point key="canvasLocation" x="1577" y="-406"/>
+        </scene>
+        <!--Find Restaurant-->
+        <scene sceneID="nmJ-TH-W7X">
+            <objects>
+                <viewController id="V54-8J-sag" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nVY-9H-GU4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2S2-oU-Hpx">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="JVu-25-vs6">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JVu-25-vs6" id="Eft-lv-UD0">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="cyt-eo-xJb">
+                                <rect key="frame" x="188.5" y="506" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looking for a restaurant in this area" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDy-MB-J4R">
+                                <rect key="frame" x="16" y="435.5" width="382" height="30.5"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6xj-lS-KfT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VDy-MB-J4R" firstAttribute="centerX" secondItem="6xj-lS-KfT" secondAttribute="centerX" id="8w0-f7-TJR"/>
+                            <constraint firstItem="6xj-lS-KfT" firstAttribute="bottom" secondItem="2S2-oU-Hpx" secondAttribute="bottom" id="BrH-MF-zOe"/>
+                            <constraint firstItem="VDy-MB-J4R" firstAttribute="leading" secondItem="6xj-lS-KfT" secondAttribute="leading" constant="16" id="bD4-c3-fU7"/>
+                            <constraint firstItem="cyt-eo-xJb" firstAttribute="top" secondItem="VDy-MB-J4R" secondAttribute="bottom" constant="40" id="fjr-5i-qu6"/>
+                            <constraint firstItem="2S2-oU-Hpx" firstAttribute="top" secondItem="6xj-lS-KfT" secondAttribute="top" id="jaz-CB-1u6"/>
+                            <constraint firstItem="cyt-eo-xJb" firstAttribute="centerX" secondItem="6xj-lS-KfT" secondAttribute="centerX" id="nZr-1W-Aii"/>
+                            <constraint firstItem="6xj-lS-KfT" firstAttribute="trailing" secondItem="2S2-oU-Hpx" secondAttribute="trailing" id="tjO-YW-jDC"/>
+                            <constraint firstItem="VDy-MB-J4R" firstAttribute="centerY" secondItem="6xj-lS-KfT" secondAttribute="centerY" id="wa4-pH-pai"/>
+                            <constraint firstItem="cyt-eo-xJb" firstAttribute="centerX" secondItem="VDy-MB-J4R" secondAttribute="centerX" id="yeo-Ur-nB4"/>
+                            <constraint firstItem="2S2-oU-Hpx" firstAttribute="leading" secondItem="6xj-lS-KfT" secondAttribute="leading" id="ygx-1c-q43"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Find Restaurant" id="Vws-Ww-bTg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GKr-qI-UEe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2562.3188405797105" y="-406.47321428571428"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="t83-1g-QXm"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="map" catalog="system" width="128" height="110"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
