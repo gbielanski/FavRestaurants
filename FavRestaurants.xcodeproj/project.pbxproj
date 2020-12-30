@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1683B67259C7CB50017297D /* ZomatoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1683B66259C7CB50017297D /* ZomatoClient.swift */; };
+		E1683B6F259C7ED00017297D /* Zomato-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1683B6E259C7ED00017297D /* Zomato-Info.plist */; };
 		E182DFB8259C68D60073A9AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182DFB7259C68D60073A9AB /* AppDelegate.swift */; };
 		E182DFBA259C68D60073A9AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182DFB9259C68D60073A9AB /* SceneDelegate.swift */; };
 		E182DFBC259C68D60073A9AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182DFBB259C68D60073A9AB /* ViewController.swift */; };
@@ -16,6 +18,10 @@
 		E182DFC7259C68D60073A9AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E182DFC5259C68D60073A9AB /* LaunchScreen.storyboard */; };
 		E182DFD2259C68D70073A9AB /* FavRestaurantsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182DFD1259C68D70073A9AB /* FavRestaurantsTests.swift */; };
 		E182DFDD259C68D70073A9AB /* FavRestaurantsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182DFDC259C68D70073A9AB /* FavRestaurantsUITests.swift */; };
+		E182DFF6259C7C300073A9AB /* FindRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182DFF5259C7C300073A9AB /* FindRestaurantViewController.swift */; };
+		E1849E87259CDB8700009594 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1849E86259CDB8700009594 /* SearchResponse.swift */; };
+		E1849E8C259CDD6900009594 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1849E8B259CDD6900009594 /* Restaurant.swift */; };
+		E1849E91259CDE6600009594 /* ZomatoErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1849E90259CDE6600009594 /* ZomatoErrorResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E1683B66259C7CB50017297D /* ZomatoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZomatoClient.swift; sourceTree = "<group>"; };
+		E1683B6E259C7ED00017297D /* Zomato-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Zomato-Info.plist"; sourceTree = "<group>"; };
 		E182DFB4259C68D60073A9AB /* FavRestaurants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavRestaurants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E182DFB7259C68D60073A9AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E182DFB9259C68D60073A9AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +59,10 @@
 		E182DFD8259C68D70073A9AB /* FavRestaurantsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FavRestaurantsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E182DFDC259C68D70073A9AB /* FavRestaurantsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavRestaurantsUITests.swift; sourceTree = "<group>"; };
 		E182DFDE259C68D70073A9AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E182DFF5259C7C300073A9AB /* FindRestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindRestaurantViewController.swift; sourceTree = "<group>"; };
+		E1849E86259CDB8700009594 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		E1849E8B259CDD6900009594 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		E1849E90259CDE6600009594 /* ZomatoErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZomatoErrorResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E1683B65259C7C890017297D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E1849E7D259CDB3D00009594 /* ZomatoResponses */,
+				E1683B66259C7CB50017297D /* ZomatoClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		E182DFAB259C68D50073A9AB = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +122,9 @@
 		E182DFB6259C68D60073A9AB /* FavRestaurants */ = {
 			isa = PBXGroup;
 			children = (
+				E1683B6E259C7ED00017297D /* Zomato-Info.plist */,
+				E1683B65259C7C890017297D /* Networking */,
+				E182DFF4259C7C020073A9AB /* View Controllers */,
 				E182DFC8259C68D60073A9AB /* Info.plist */,
 				E182DFED259C69C50073A9AB /* Assets */,
 				E182DFB7259C68D60073A9AB /* AppDelegate.swift */,
@@ -137,6 +161,24 @@
 				E182DFC3259C68D60073A9AB /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		E182DFF4259C7C020073A9AB /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E182DFF5259C7C300073A9AB /* FindRestaurantViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E1849E7D259CDB3D00009594 /* ZomatoResponses */ = {
+			isa = PBXGroup;
+			children = (
+				E1849E86259CDB8700009594 /* SearchResponse.swift */,
+				E1849E8B259CDD6900009594 /* Restaurant.swift */,
+				E1849E90259CDE6600009594 /* ZomatoErrorResponse.swift */,
+			);
+			path = ZomatoResponses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +286,7 @@
 			files = (
 				E182DFC7259C68D60073A9AB /* LaunchScreen.storyboard in Resources */,
 				E182DFC4259C68D60073A9AB /* Assets.xcassets in Resources */,
+				E1683B6F259C7ED00017297D /* Zomato-Info.plist in Resources */,
 				E182DFBF259C68D60073A9AB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,8 +312,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1849E87259CDB8700009594 /* SearchResponse.swift in Sources */,
+				E1683B67259C7CB50017297D /* ZomatoClient.swift in Sources */,
+				E182DFF6259C7C300073A9AB /* FindRestaurantViewController.swift in Sources */,
 				E182DFC2259C68D60073A9AB /* FavRestaurants.xcdatamodeld in Sources */,
+				E1849E8C259CDD6900009594 /* Restaurant.swift in Sources */,
 				E182DFBC259C68D60073A9AB /* ViewController.swift in Sources */,
+				E1849E91259CDE6600009594 /* ZomatoErrorResponse.swift in Sources */,
 				E182DFB8259C68D60073A9AB /* AppDelegate.swift in Sources */,
 				E182DFBA259C68D60073A9AB /* SceneDelegate.swift in Sources */,
 			);
