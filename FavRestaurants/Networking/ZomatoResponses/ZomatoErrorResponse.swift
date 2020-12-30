@@ -20,7 +20,7 @@ class ZomatoErrorResponse: Codable {
 }
 
 extension ZomatoErrorResponse : LocalizedError{
-    var errorDescription: String? {
-        return "\(status) \(message)"
-    }
+  var errorDescription: String? {
+    return "\(status) \(message)"
+  }
 }
