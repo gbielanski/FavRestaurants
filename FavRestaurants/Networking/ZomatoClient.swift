@@ -23,7 +23,7 @@ class ZomatoClient {
 
   enum Endpoints {
     static let base = "https://developers.zomato.com/api/v2.1/search"
-    static let count = 2
+    static let count = 20
     static let radius = 100
     static let sort = "real_distance"
     static let order = "desc"

@@ -8,7 +8,11 @@
 import Foundation
 
 class Restaurant: Codable{
-  let restaurant: RestaurantData
+  let data: RestaurantData
+  enum CodingKeys: String, CodingKey{
+    case data = "restaurant"
+
+  }
 }
 
 class RestaurantData: Codable{
