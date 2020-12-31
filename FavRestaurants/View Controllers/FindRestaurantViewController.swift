@@ -120,7 +120,7 @@ extension FindRestaurantViewController: UITableViewDelegate, UITableViewDataSour
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "FoundRestaurantTableCell")!
-    let restaurant = restaurants![(indexPath as NSIndexPath).row]
+    var restaurant = restaurants![(indexPath as NSIndexPath).row]
     
     cell.textLabel?.text = restaurant.data.name
     cell.detailTextLabel?.text = restaurant.data.location.address
@@ -133,6 +133,8 @@ extension FindRestaurantViewController: UITableViewDelegate, UITableViewDataSour
         guard let data = data else {
           return
         }
+
+        restaurant.data.imageData = data
         
         if let image = UIImage(data: data){
           cell.imageView?.image = image
@@ -148,6 +150,7 @@ extension FindRestaurantViewController: UITableViewDelegate, UITableViewDataSour
 
     if let restaurants = self.restaurants {
       let restaurant = restaurants[(indexPath as NSIndexPath).row]
+
       self.performSegue(withIdentifier: "showDetailsFromFind", sender: restaurant)
     }
 

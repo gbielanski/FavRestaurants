@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Restaurant: Codable{
   let data: RestaurantData
@@ -18,6 +19,7 @@ class RestaurantData: Codable{
   let name: String
   let location: Location
   let thumb: String
+  var imageData: Data?
 }
 
 class Location: Codable {

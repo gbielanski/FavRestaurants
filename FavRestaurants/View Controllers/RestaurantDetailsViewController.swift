@@ -7,16 +7,20 @@
 
 import Foundation
 import UIKit
+import CoreData
 
-//showDetailsFromFind
 
 class RestaurantDetailsViewController: UIViewController{
 
   @IBOutlet weak var favButton: UIBarButtonItem!
-
   @IBOutlet weak var restaurantName: UILabel!
 
   @IBAction func favButtonTapped(_ sender: Any) {
+    let favRestaurant = FavRestaurant(context: dataController.viewContext)
+    favRestaurant.address = restaurant.data.location.address
+    favRestaurant.name = restaurant.data.name
+    favRestaurant.thumb = restaurant.data.imageData
+    try? dataController.viewContext.save()
   }
 
   var dataController: DataController!
