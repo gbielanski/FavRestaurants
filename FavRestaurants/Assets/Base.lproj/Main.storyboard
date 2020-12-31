@@ -221,17 +221,76 @@
                         <outlet property="lookingForLabel" destination="VDy-MB-J4R" id="Dko-4t-6n5"/>
                         <outlet property="mapView" destination="eaW-VP-qVC" id="g8S-F3-lph"/>
                         <outlet property="tableView" destination="bAC-LY-cVB" id="zlw-0V-WTm"/>
+                        <segue destination="fen-C9-Jx7" kind="show" identifier="showDetailsFromFind" id="V2Q-bi-4Ti"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GKr-qI-UEe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2562.3188405797105" y="-406.47321428571428"/>
         </scene>
+        <!--Restaurant Details View Controller-->
+        <scene sceneID="7yY-eI-pWQ">
+            <objects>
+                <viewController id="fen-C9-Jx7" customClass="RestaurantDetailsViewController" customModule="FavRestaurants" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hyc-5S-vht">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Uu-In-0Wb">
+                                <rect key="frame" x="16" y="104" width="382" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="YcZ-Xv-GMZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4Tl-wC-XgX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4Uu-In-0Wb" firstAttribute="top" secondItem="4Tl-wC-XgX" secondAttribute="top" constant="16" id="eDj-xO-9TB"/>
+                            <constraint firstItem="4Uu-In-0Wb" firstAttribute="leading" secondItem="4Tl-wC-XgX" secondAttribute="leading" constant="16" id="nma-TE-JpP"/>
+                            <constraint firstItem="4Tl-wC-XgX" firstAttribute="trailing" secondItem="4Uu-In-0Wb" secondAttribute="trailing" constant="16" id="wcU-5l-1b7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eBt-zD-1bK">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="heart" catalog="system" id="uga-nj-lWw">
+                            <connections>
+                                <action selector="favButtonTapped:" destination="fen-C9-Jx7" id="N2Y-eP-ZkR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="favButton" destination="uga-nj-lWw" id="13T-kx-LXJ"/>
+                        <outlet property="restaurantName" destination="4Uu-In-0Wb" id="coX-J0-Pau"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dqb-H6-iEZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3472" y="-411"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kgf-dk-Ir3">
+            <objects>
+                <viewController id="i4s-aE-rER" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1up-HC-VBH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Pki-Vg-Qpm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ONe-My-wGa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2817" y="-1079"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BrL-j6-7u4"/>
+        <segue reference="COz-Dz-EAR"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <image name="plus" catalog="system" width="128" height="113"/>

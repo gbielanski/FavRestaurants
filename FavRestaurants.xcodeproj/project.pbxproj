@@ -24,6 +24,7 @@
 		E1E683FA259DE7F2000A42E6 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E683F9259DE7F2000A42E6 /* DataController.swift */; };
 		E1E68402259DE8D0000A42E6 /* FavRestaurantsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E68401259DE8D0000A42E6 /* FavRestaurantsListViewController.swift */; };
 		E1E68407259DE915000A42E6 /* FavRestaurantsListMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E68406259DE915000A42E6 /* FavRestaurantsListMapController.swift */; };
+		E1E6840F259DF76E000A42E6 /* RestaurantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E6840E259DF76E000A42E6 /* RestaurantDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		E1E683F9259DE7F2000A42E6 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		E1E68401259DE8D0000A42E6 /* FavRestaurantsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavRestaurantsListViewController.swift; sourceTree = "<group>"; };
 		E1E68406259DE915000A42E6 /* FavRestaurantsListMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavRestaurantsListMapController.swift; sourceTree = "<group>"; };
+		E1E6840E259DF76E000A42E6 /* RestaurantDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				E182DFF5259C7C300073A9AB /* FindRestaurantViewController.swift */,
 				E1E68401259DE8D0000A42E6 /* FavRestaurantsListViewController.swift */,
 				E1E68406259DE915000A42E6 /* FavRestaurantsListMapController.swift */,
+				E1E6840E259DF76E000A42E6 /* RestaurantDetailsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				E182DFC2259C68D60073A9AB /* FavRestaurants.xcdatamodeld in Sources */,
 				E1849E8C259CDD6900009594 /* Restaurant.swift in Sources */,
 				E1E683FA259DE7F2000A42E6 /* DataController.swift in Sources */,
+				E1E6840F259DF76E000A42E6 /* RestaurantDetailsViewController.swift in Sources */,
 				E182DFBC259C68D60073A9AB /* ViewController.swift in Sources */,
 				E1E68407259DE915000A42E6 /* FavRestaurantsListMapController.swift in Sources */,
 				E1E68402259DE8D0000A42E6 /* FavRestaurantsListViewController.swift in Sources */,
