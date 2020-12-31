@@ -147,13 +147,11 @@ extension FindRestaurantViewController: UITableViewDelegate, UITableViewDataSour
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
     if let restaurants = self.restaurants {
       let restaurant = restaurants[(indexPath as NSIndexPath).row]
 
       self.performSegue(withIdentifier: "showDetailsFromFind", sender: restaurant)
     }
-
   }
 
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

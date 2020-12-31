@@ -81,6 +81,7 @@
                     <connections>
                         <outlet property="mapView" destination="ElY-DK-fPd" id="MXU-6m-bZM"/>
                         <segue destination="V54-8J-sag" kind="show" identifier="findRestaurantFromMap" id="BrL-j6-7u4"/>
+                        <segue destination="fen-C9-Jx7" kind="show" identifier="showDetailsFromMap" id="9Dt-xF-BgC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hYU-Wf-Gzf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -174,6 +175,7 @@
                     <connections>
                         <outlet property="tableView" destination="oe8-5N-nUs" id="PoK-Yi-SOb"/>
                         <segue destination="V54-8J-sag" kind="show" identifier="findRestaurantFromList" id="COz-Dz-EAR"/>
+                        <segue destination="fen-C9-Jx7" kind="show" identifier="showDetailsFromList" id="z9o-Ub-lYr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P2J-OC-vLa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -273,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GKr-qI-UEe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2562.3188405797105" y="-406.47321428571428"/>
+            <point key="canvasLocation" x="2997" y="-406"/>
         </scene>
         <!--Restaurant Details View Controller-->
         <scene sceneID="7yY-eI-pWQ">
@@ -315,26 +317,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dqb-H6-iEZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3472" y="-411"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="kgf-dk-Ir3">
-            <objects>
-                <viewController id="i4s-aE-rER" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1up-HC-VBH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Pki-Vg-Qpm"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ONe-My-wGa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2817" y="-1079"/>
+            <point key="canvasLocation" x="3128" y="400"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="COz-Dz-EAR"/>
+        <segue reference="9Dt-xF-BgC"/>
+        <segue reference="BrL-j6-7u4"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>

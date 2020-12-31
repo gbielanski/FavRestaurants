@@ -42,10 +42,16 @@ class FavRestaurantsListViewController: UIViewController{
     fetchedResultsController = nil
   }
 
+
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "findRestaurantFromList" {
       let findRestaurantVC = segue.destination as! FindRestaurantViewController
       findRestaurantVC.dataController = dataController
+    } else if segue.identifier == "showDetailsFromList" {
+      let findDetailsVC = segue.destination as! RestaurantDetailsViewController
+      findDetailsVC.dataController = dataController
+      let restaurant = sender as! Restaurant
+      findDetailsVC.restaurant = restaurant
     }
   }
 
@@ -88,6 +94,12 @@ extension FavRestaurantsListViewController: UITableViewDelegate, UITableViewData
 
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 128
+  }
+
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let fav = fetchedResultsController.object(at: indexPath)
+    
+    self.performSegue(withIdentifier: "showDetailsFromList", sender: fav.toRestaurnt())
   }
 }
 

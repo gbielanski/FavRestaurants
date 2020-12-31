@@ -10,7 +10,6 @@
 		E1683B67259C7CB50017297D /* ZomatoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1683B66259C7CB50017297D /* ZomatoClient.swift */; };
 		E1683B6F259C7ED00017297D /* Zomato-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1683B6E259C7ED00017297D /* Zomato-Info.plist */; };
 		E182DFB8259C68D60073A9AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182DFB7259C68D60073A9AB /* AppDelegate.swift */; };
-		E182DFBC259C68D60073A9AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182DFBB259C68D60073A9AB /* ViewController.swift */; };
 		E182DFBF259C68D60073A9AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E182DFBD259C68D60073A9AB /* Main.storyboard */; };
 		E182DFC2259C68D60073A9AB /* FavRestaurants.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E182DFC0259C68D60073A9AB /* FavRestaurants.xcdatamodeld */; };
 		E182DFC4259C68D60073A9AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E182DFC3259C68D60073A9AB /* Assets.xcassets */; };
@@ -50,7 +49,6 @@
 		E1683B6E259C7ED00017297D /* Zomato-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Zomato-Info.plist"; sourceTree = "<group>"; };
 		E182DFB4259C68D60073A9AB /* FavRestaurants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavRestaurants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E182DFB7259C68D60073A9AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E182DFBB259C68D60073A9AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E182DFBE259C68D60073A9AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E182DFC1259C68D60073A9AB /* FavRestaurants.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavRestaurants.xcdatamodel; sourceTree = "<group>"; };
 		E182DFC3259C68D60073A9AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				E182DFC8259C68D60073A9AB /* Info.plist */,
 				E182DFED259C69C50073A9AB /* Assets */,
 				E182DFB7259C68D60073A9AB /* AppDelegate.swift */,
-				E182DFBB259C68D60073A9AB /* ViewController.swift */,
 			);
 			path = FavRestaurants;
 			sourceTree = "<group>";
@@ -348,7 +345,6 @@
 				E1E68418259E0FD2000A42E6 /* FavRestaurant+Extension.swift in Sources */,
 				E1E683FA259DE7F2000A42E6 /* DataController.swift in Sources */,
 				E1E6840F259DF76E000A42E6 /* RestaurantDetailsViewController.swift in Sources */,
-				E182DFBC259C68D60073A9AB /* ViewController.swift in Sources */,
 				E1E68407259DE915000A42E6 /* FavRestaurantsMapController.swift in Sources */,
 				E1E68402259DE8D0000A42E6 /* FavRestaurantsListViewController.swift in Sources */,
 				E1849E91259CDE6600009594 /* ZomatoErrorResponse.swift in Sources */,
