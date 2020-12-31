@@ -115,17 +115,56 @@
                                     <action selector="addButtonTapped:" destination="hPT-Tz-GST" eventType="touchUpInside" id="zO4-YD-cuS"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oe8-5N-nUs">
+                                <rect key="frame" x="8" y="96" width="398" height="669"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavRestaurantTableCell" textLabel="nfi-Kr-fbz" detailTextLabel="xq4-VS-sEg" imageView="ZAy-JY-1zJ" style="IBUITableViewCellStyleSubtitle" id="VFN-c9-JlJ">
+                                        <rect key="frame" x="0.0" y="28" width="398" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VFN-c9-JlJ" id="dYg-8A-3KJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nfi-Kr-fbz">
+                                                    <rect key="frame" x="101" y="10" width="33" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xq4-VS-sEg">
+                                                    <rect key="frame" x="101" y="31.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="launch" id="ZAy-JY-1zJ">
+                                                    <rect key="frame" x="20" y="0.0" width="66" height="55.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="grV-8L-txt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ijr-bl-tlO" firstAttribute="top" secondItem="oe8-5N-nUs" secondAttribute="bottom" constant="8" id="0ea-zh-6O9"/>
                             <constraint firstItem="grV-8L-txt" firstAttribute="bottom" secondItem="ijr-bl-tlO" secondAttribute="bottom" id="4BI-s6-1QR"/>
                             <constraint firstItem="grV-8L-txt" firstAttribute="trailing" secondItem="ijr-bl-tlO" secondAttribute="trailing" constant="16" id="LuA-pU-XNR"/>
+                            <constraint firstItem="oe8-5N-nUs" firstAttribute="leading" secondItem="grV-8L-txt" secondAttribute="leading" constant="8" id="OVw-xb-nJx"/>
                             <constraint firstItem="ijr-bl-tlO" firstAttribute="leading" secondItem="grV-8L-txt" secondAttribute="leading" constant="16" id="SGQ-Aj-iQg"/>
+                            <constraint firstItem="grV-8L-txt" firstAttribute="trailing" secondItem="oe8-5N-nUs" secondAttribute="trailing" constant="8" id="gng-cc-ofq"/>
+                            <constraint firstItem="oe8-5N-nUs" firstAttribute="top" secondItem="grV-8L-txt" secondAttribute="top" constant="8" id="nWc-36-9Mp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favourite Restaurants List" id="rfc-cg-caV"/>
                     <connections>
+                        <outlet property="tableView" destination="oe8-5N-nUs" id="PoK-Yi-SOb"/>
                         <segue destination="V54-8J-sag" kind="show" identifier="findRestaurantFromList" id="COz-Dz-EAR"/>
                     </connections>
                 </viewController>
@@ -291,6 +330,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="launch" width="539.5" height="456.5"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <image name="plus" catalog="system" width="128" height="113"/>
