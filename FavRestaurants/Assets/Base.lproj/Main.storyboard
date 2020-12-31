@@ -46,7 +46,7 @@
         <!--Favourite Restaurants Map-->
         <scene sceneID="RMA-16-mCp">
             <objects>
-                <viewController id="B0y-Kx-59j" sceneMemberID="viewController">
+                <viewController id="B0y-Kx-59j" customClass="FavRestaurantsMapViewController" customModule="FavRestaurants" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QnU-FP-6Mh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,7 +58,7 @@
                                 </constraints>
                                 <state key="normal" image="plus" catalog="system"/>
                                 <connections>
-                                    <segue destination="V54-8J-sag" kind="show" id="5k9-fQ-vbF"/>
+                                    <action selector="addButtonTapped:" destination="B0y-Kx-59j" eventType="touchUpInside" id="QXj-8Z-MZz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -71,6 +71,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favourite Restaurants Map" id="IpW-yu-l8R"/>
+                    <connections>
+                        <segue destination="V54-8J-sag" kind="show" identifier="findRestaurantFromMap" id="BrL-j6-7u4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hYU-Wf-Gzf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,7 +100,7 @@
         <!--Favourite Restaurants List-->
         <scene sceneID="Wmn-Gx-1Wl">
             <objects>
-                <viewController id="hPT-Tz-GST" sceneMemberID="viewController">
+                <viewController id="hPT-Tz-GST" customClass="FavRestaurantsListViewController" customModule="FavRestaurants" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FXS-5u-7AO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,7 +112,7 @@
                                 </constraints>
                                 <state key="normal" image="plus" catalog="system"/>
                                 <connections>
-                                    <segue destination="V54-8J-sag" kind="show" id="E0D-0V-Yxs"/>
+                                    <action selector="addButtonTapped:" destination="hPT-Tz-GST" eventType="touchUpInside" id="zO4-YD-cuS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -122,6 +125,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favourite Restaurants List" id="rfc-cg-caV"/>
+                    <connections>
+                        <segue destination="V54-8J-sag" kind="show" identifier="findRestaurantFromList" id="COz-Dz-EAR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P2J-OC-vLa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -223,7 +229,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5k9-fQ-vbF"/>
+        <segue reference="BrL-j6-7u4"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="list.bullet" catalog="system" width="128" height="88"/>

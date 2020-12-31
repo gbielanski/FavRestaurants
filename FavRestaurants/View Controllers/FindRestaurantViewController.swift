@@ -16,6 +16,8 @@ class FindRestaurantViewController: UIViewController {
   @IBOutlet weak var couldNotFind: UILabel!
   @IBOutlet weak var lookingForLabel: UILabel!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
+  var dataController: DataController!
   
   var restaurants: [Restaurant]?
   override func viewDidLoad() {
