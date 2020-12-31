@@ -20,6 +20,9 @@ class RestaurantDetailsViewController: UIViewController{
     favRestaurant.address = restaurant.data.location.address
     favRestaurant.name = restaurant.data.name
     favRestaurant.thumb = restaurant.data.imageData
+    favRestaurant.latitude = Double(restaurant.data.location.latitude) ?? 0.0
+    favRestaurant.longitude = Double(restaurant.data.location.longitude) ?? 0.0
+
     try? dataController.viewContext.save()
   }
 

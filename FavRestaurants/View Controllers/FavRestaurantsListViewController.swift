@@ -25,14 +25,13 @@ class FavRestaurantsListViewController: UIViewController{
     tableView.dataSource = self
   }
 
-
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
     setupFetchedResultController()
 
     if fetchedResultsController.sections?[0].numberOfObjects ?? 0 > 0 {
-//TODO
+      tableView.reloadData()
     } else {
 //TODO
     }

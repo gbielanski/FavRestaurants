@@ -61,17 +61,25 @@
                                     <action selector="addButtonTapped:" destination="B0y-Kx-59j" eventType="touchUpInside" id="QXj-8Z-MZz"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ElY-DK-fPd">
+                                <rect key="frame" x="0.0" y="88" width="414" height="685"/>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9HS-jB-REJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ElY-DK-fPd" firstAttribute="leading" secondItem="9HS-jB-REJ" secondAttribute="leading" id="1cH-Zj-Uwg"/>
+                            <constraint firstItem="9HS-jB-REJ" firstAttribute="trailing" secondItem="ElY-DK-fPd" secondAttribute="trailing" id="1nI-rZ-8yq"/>
                             <constraint firstItem="V0V-BQ-wyl" firstAttribute="leading" secondItem="9HS-jB-REJ" secondAttribute="leading" constant="16" id="7iR-mw-Jkb"/>
                             <constraint firstItem="9HS-jB-REJ" firstAttribute="trailing" secondItem="V0V-BQ-wyl" secondAttribute="trailing" constant="16" id="P0b-gw-hBB"/>
+                            <constraint firstItem="V0V-BQ-wyl" firstAttribute="top" secondItem="ElY-DK-fPd" secondAttribute="bottom" id="Six-xl-lb0"/>
+                            <constraint firstItem="ElY-DK-fPd" firstAttribute="top" secondItem="9HS-jB-REJ" secondAttribute="top" id="ZjP-mc-ukb"/>
                             <constraint firstItem="9HS-jB-REJ" firstAttribute="bottom" secondItem="V0V-BQ-wyl" secondAttribute="bottom" id="m56-H6-2Dn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favourite Restaurants Map" id="IpW-yu-l8R"/>
                     <connections>
+                        <outlet property="mapView" destination="ElY-DK-fPd" id="MXU-6m-bZM"/>
                         <segue destination="V54-8J-sag" kind="show" identifier="findRestaurantFromMap" id="BrL-j6-7u4"/>
                     </connections>
                 </viewController>
