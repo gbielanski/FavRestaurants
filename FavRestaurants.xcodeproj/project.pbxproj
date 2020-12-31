@@ -25,6 +25,7 @@
 		E1E68407259DE915000A42E6 /* FavRestaurantsMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E68406259DE915000A42E6 /* FavRestaurantsMapController.swift */; };
 		E1E6840F259DF76E000A42E6 /* RestaurantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E6840E259DF76E000A42E6 /* RestaurantDetailsViewController.swift */; };
 		E1E68418259E0FD2000A42E6 /* FavRestaurant+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E68417259E0FD2000A42E6 /* FavRestaurant+Extension.swift */; };
+		E1E6842C259E3582000A42E6 /* FavPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E6842B259E3582000A42E6 /* FavPointAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		E1E68406259DE915000A42E6 /* FavRestaurantsMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavRestaurantsMapController.swift; sourceTree = "<group>"; };
 		E1E6840E259DF76E000A42E6 /* RestaurantDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsViewController.swift; sourceTree = "<group>"; };
 		E1E68417259E0FD2000A42E6 /* FavRestaurant+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavRestaurant+Extension.swift"; sourceTree = "<group>"; };
+		E1E6842B259E3582000A42E6 /* FavPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavPointAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				E1E68401259DE8D0000A42E6 /* FavRestaurantsListViewController.swift */,
 				E1E68406259DE915000A42E6 /* FavRestaurantsMapController.swift */,
 				E1E6840E259DF76E000A42E6 /* RestaurantDetailsViewController.swift */,
+				E1E6842B259E3582000A42E6 /* FavPointAnnotation.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			files = (
 				E1849E87259CDB8700009594 /* SearchResponse.swift in Sources */,
 				E1683B67259C7CB50017297D /* ZomatoClient.swift in Sources */,
+				E1E6842C259E3582000A42E6 /* FavPointAnnotation.swift in Sources */,
 				E182DFF6259C7C300073A9AB /* FindRestaurantViewController.swift in Sources */,
 				E182DFC2259C68D60073A9AB /* FavRestaurants.xcdatamodeld in Sources */,
 				E1849E8C259CDD6900009594 /* Restaurant.swift in Sources */,

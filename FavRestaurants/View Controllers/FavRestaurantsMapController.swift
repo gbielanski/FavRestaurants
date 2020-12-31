@@ -48,6 +48,11 @@ class FavRestaurantsMapViewController: UIViewController{
     if segue.identifier == "findRestaurantFromMap" {
       let findRestaurantVC = segue.destination as! FindRestaurantViewController
       findRestaurantVC.dataController = dataController
+    } else if segue.identifier == "showDetailsFromMap" {
+      let findDetailsVC = segue.destination as! RestaurantDetailsViewController
+      findDetailsVC.dataController = dataController
+      let restaurant = sender as! Restaurant
+      findDetailsVC.restaurant = restaurant
     }
   }
 
@@ -71,9 +76,10 @@ class FavRestaurantsMapViewController: UIViewController{
       let lat = CLLocationDegrees(fav.latitude)
       let long = CLLocationDegrees(fav.longitude)
       let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-      let annotation = MKPointAnnotation()
+      let annotation = FavPointAnnotation()
       annotation.coordinate = coordinate
       annotation.title = "\(fav.name)"
+      annotation.restaurant = fav.toRestaurnt()
       self.mapView.addAnnotation(annotation)
     }
   }
@@ -128,5 +134,11 @@ extension FavRestaurantsMapViewController: MKMapViewDelegate{
     }
 
     return pinView
+  }
+
+  func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    if let favPointAnnotation = view.annotation as? FavPointAnnotation {
+      self.performSegue(withIdentifier: "showDetailsFromMap", sender: favPointAnnotation.restaurant)
+    }
   }
 }
