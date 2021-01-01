@@ -72,12 +72,20 @@ class RestaurantDetailsViewController: UIViewController{
 
   private func showAllert(title: String, message: String) {
     let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    alertVC.addAction(UIAlertAction(title: "OK", style: .default){ action in
-      self.navigationController?.popViewController(animated: true)
-    })
-    present(alertVC, animated: true){
-      self.performSegue(withIdentifier: "fromDetails", sender: self)
+
+
+    let backAction = UIAlertAction(title: "OK", style: .default) { [weak self] action in
+      if self?.navigationController?.children[0] is FavRestaurantsListViewController {
+        self?.performSegue(withIdentifier: "fromDetails", sender: self)
+      } else {
+        self?.performSegue(withIdentifier: "fromDetailsToMap", sender: self)
+      }
     }
+
+    alertVC.addAction(backAction)
+
+    present(alertVC, animated: true, completion: nil)
+
   }
 
 }

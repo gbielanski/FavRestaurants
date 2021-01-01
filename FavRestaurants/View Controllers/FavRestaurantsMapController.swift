@@ -21,6 +21,9 @@ class FavRestaurantsMapViewController: UIViewController{
     self.performSegue(withIdentifier: "findRestaurantFromMap", sender: nil)
   }
 
+  @IBAction func unwindToMapVC( _ seg: UIStoryboardSegue) {
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
     mapView.delegate = self

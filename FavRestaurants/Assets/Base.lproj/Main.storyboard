@@ -318,6 +318,7 @@
                         <outlet property="favButton" destination="uga-nj-lWw" id="13T-kx-LXJ"/>
                         <outlet property="restaurantName" destination="4Uu-In-0Wb" id="coX-J0-Pau"/>
                         <segue destination="Rw3-XH-Cck" kind="unwind" identifier="fromDetails" unwindAction="unwindToFirstVC:" id="2HE-kT-t0Q"/>
+                        <segue destination="Rw3-XH-Cck" kind="unwind" identifier="fromDetailsToMap" unwindAction="unwindToMapVC:" id="8Ls-pG-6v7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dqb-H6-iEZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
