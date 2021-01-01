@@ -11,5 +11,6 @@ import Foundation
 import MapKit
 
 class FavPointAnnotation: MKPointAnnotation {
-  var restaurant: Restaurant?
+  var favRestaurant: FavRestaurant? = nil
+  var restaurant: Restaurant!
 }

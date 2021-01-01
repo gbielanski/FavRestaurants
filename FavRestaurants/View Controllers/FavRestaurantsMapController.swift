@@ -31,13 +31,7 @@ class FavRestaurantsMapViewController: UIViewController{
     self.tabBarController?.tabBar.isHidden = false
 
     setupFetchedResultController()
-
-    if fetchedResultsController.sections?[0].numberOfObjects ?? 0 > 0 {
-     updateMap()
-    } else {
-      //TODO
-      print("Zero")
-    }
+    updateMap()
   }
 
   override func viewWillDisappear(_ animated: Bool) {
@@ -50,11 +44,12 @@ class FavRestaurantsMapViewController: UIViewController{
       let findRestaurantVC = segue.destination as! FindRestaurantViewController
       findRestaurantVC.dataController = dataController
     } else if segue.identifier == "showDetailsFromMap" {
-      let findDetailsVC = segue.destination as! RestaurantDetailsViewController
-      findDetailsVC.dataController = dataController
-      let restaurant = sender as! Restaurant
-      findDetailsVC.restaurant = restaurant
-      findDetailsVC.isFav = true
+      let detailsVC = segue.destination as! RestaurantDetailsViewController
+      detailsVC.dataController = dataController
+      let fav = sender as! FavRestaurant
+      detailsVC.restaurant = fav.toRestaurnt()
+      detailsVC.isFav = true
+      detailsVC.favRestaurant = fav
     }
   }
 
@@ -74,6 +69,7 @@ class FavRestaurantsMapViewController: UIViewController{
   }
 
   private func updateMap(){
+    self.mapView.removeAnnotations(self.mapView.annotations)
     fetchedResultsController.fetchedObjects?.forEach{ fav in
       let lat = CLLocationDegrees(fav.latitude)
       let long = CLLocationDegrees(fav.longitude)
@@ -81,7 +77,7 @@ class FavRestaurantsMapViewController: UIViewController{
       let annotation = FavPointAnnotation()
       annotation.coordinate = coordinate
       annotation.title = fav.name ?? "Restaurant"
-      annotation.restaurant = fav.toRestaurnt()
+      annotation.favRestaurant = fav
       self.mapView.addAnnotation(annotation)
     }
   }
@@ -140,7 +136,7 @@ extension FavRestaurantsMapViewController: MKMapViewDelegate{
 
   func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
     if let favPointAnnotation = view.annotation as? FavPointAnnotation {
-      self.performSegue(withIdentifier: "showDetailsFromMap", sender: favPointAnnotation.restaurant)
+      self.performSegue(withIdentifier: "showDetailsFromMap", sender: favPointAnnotation.favRestaurant)
     }
   }
 }
