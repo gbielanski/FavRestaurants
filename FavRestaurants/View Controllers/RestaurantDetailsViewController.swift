@@ -28,11 +28,17 @@ class RestaurantDetailsViewController: UIViewController{
 
   var dataController: DataController!
   var restaurant: Restaurant!
+  var isFav: Bool!
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     self.tabBarController?.tabBar.isHidden = true
     restaurantName.text = restaurant.data.name
+    if isFav{
+      favButton.image = UIImage(systemName: "heart.fill")
+    } else {
+      favButton.image = UIImage(systemName: "heart")
+    }
   }
 
 }

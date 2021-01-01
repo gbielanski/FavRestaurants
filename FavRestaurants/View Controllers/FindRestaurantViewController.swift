@@ -57,6 +57,7 @@ class FindRestaurantViewController: UIViewController {
       findDetailsVC.dataController = dataController
       let restaurant = sender as! Restaurant
       findDetailsVC.restaurant = restaurant
+      findDetailsVC.isFav = false
     }
   }
   
