@@ -16,6 +16,28 @@ class RestaurantDetailsViewController: UIViewController{
   @IBOutlet weak var restaurantName: UILabel!
 
   @IBAction func favButtonTapped(_ sender: Any) {
+    if isFav {
+      favButtonTappedForFav()
+    }else {
+      favButtonTappedForNew()
+    }
+  }
+
+  private func favButtonTappedForFav(){
+    dataController.viewContext.delete(favRestaurant!)
+
+    do {
+      try dataController.viewContext.save()
+    }catch {
+      showAllert(title: "Failed", message: error.localizedDescription)
+    }
+
+    favButton.image = UIImage(systemName: "heart")
+    showAllert(title: "Success", message: "Removed from favourites")
+  }
+
+  private func favButtonTappedForNew(){
+
     let favRestaurant = FavRestaurant(context: dataController.viewContext)
     favRestaurant.address = restaurant.data.location.address
     favRestaurant.name = restaurant.data.name
@@ -28,12 +50,13 @@ class RestaurantDetailsViewController: UIViewController{
     }catch {
       showAllert(title: "Failed", message: error.localizedDescription)
     }
-
-    showAllert(title: "Success", message: "Added to favourite")
+    favButton.image = UIImage(systemName: "heart.fill")
+    showAllert(title: "Success", message: "Added to favourites")
   }
 
   var dataController: DataController!
   var restaurant: Restaurant!
+  var favRestaurant: FavRestaurant? = nil
   var isFav: Bool!
 
   override func viewWillAppear(_ animated: Bool) {

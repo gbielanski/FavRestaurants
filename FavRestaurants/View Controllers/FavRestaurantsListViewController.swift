@@ -33,11 +33,7 @@ class FavRestaurantsListViewController: UIViewController{
     self.tabBarController?.tabBar.isHidden = false
     setupFetchedResultController()
 
-    if fetchedResultsController.sections?[0].numberOfObjects ?? 0 > 0 {
-      tableView.reloadData()
-    } else {
-//TODO
-    }
+    tableView.reloadData()
   }
 
   override func viewWillDisappear(_ animated: Bool) {
@@ -51,11 +47,12 @@ class FavRestaurantsListViewController: UIViewController{
       let findRestaurantVC = segue.destination as! FindRestaurantViewController
       findRestaurantVC.dataController = dataController
     } else if segue.identifier == "showDetailsFromList" {
-      let findDetailsVC = segue.destination as! RestaurantDetailsViewController
-      findDetailsVC.dataController = dataController
-      let restaurant = sender as! Restaurant
-      findDetailsVC.restaurant = restaurant
-      findDetailsVC.isFav = true
+      let detailsVC = segue.destination as! RestaurantDetailsViewController
+      detailsVC.dataController = dataController
+      let fav = sender as! FavRestaurant
+      detailsVC.restaurant = fav.toRestaurnt()
+      detailsVC.isFav = true
+      detailsVC.favRestaurant = fav
     }
   }
 
@@ -99,7 +96,7 @@ extension FavRestaurantsListViewController: UITableViewDelegate, UITableViewData
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let fav = fetchedResultsController.object(at: indexPath)
     
-    self.performSegue(withIdentifier: "showDetailsFromList", sender: fav.toRestaurnt())
+    self.performSegue(withIdentifier: "showDetailsFromList", sender: fav)
   }
 }
 
