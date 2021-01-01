@@ -25,6 +25,7 @@ class FindRestaurantViewController: UIViewController {
     tableView.delegate = self
     tableView.dataSource = self
     mapView.delegate = self
+    showNetworkCall(inProgress: true)
     // Warsaw Centrum
     ZomatoClient.getRestaurantsInLocation(lat: 52.231003, lon: 21.011682){ restaurants, error in
     // Zielonka
@@ -48,7 +49,6 @@ class FindRestaurantViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     self.tabBarController?.tabBar.isHidden = true
-    showNetworkCall(inProgress: true)
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
