@@ -76,7 +76,7 @@ class FindRestaurantViewController: UIViewController {
       return
     }
 
-    var annotations = [MKPointAnnotation]()
+    var annotations = [FavPointAnnotation]()
 
     if foundRestaurants.count > 0 {
       let centerLocation = CLLocation(
@@ -94,9 +94,10 @@ class FindRestaurantViewController: UIViewController {
 
       let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
 
-      let annotation = MKPointAnnotation()
+      let annotation = FavPointAnnotation()
       annotation.coordinate = coordinate
       annotation.title = "\(restaurant.data.name)"
+      annotation.restaurant = restaurant
 
       annotations.append(annotation)
     }
@@ -178,5 +179,11 @@ extension FindRestaurantViewController: MKMapViewDelegate{
     }
 
     return pinView
+  }
+
+  func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    if let favPointAnnotation = view.annotation as? FavPointAnnotation {
+      self.performSegue(withIdentifier: "showDetailsFromFind", sender: favPointAnnotation.restaurant)
+    }
   }
 }
