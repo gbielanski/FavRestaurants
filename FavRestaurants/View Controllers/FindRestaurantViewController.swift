@@ -125,7 +125,7 @@ extension FindRestaurantViewController: UITableViewDelegate, UITableViewDataSour
     
     cell.textLabel?.text = restaurant.data.name
     cell.detailTextLabel?.text = restaurant.data.location.address
-    cell.imageView?.image = UIImage(named: "launch")
+    cell.imageView?.image = UIImage(named: "placeholder")
     
     let path = restaurant.data.thumb
     
