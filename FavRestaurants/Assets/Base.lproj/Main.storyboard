@@ -124,33 +124,33 @@
                                     <action selector="addButtonTapped:" destination="hPT-Tz-GST" eventType="touchUpInside" id="zO4-YD-cuS"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oe8-5N-nUs">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="128" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oe8-5N-nUs">
                                 <rect key="frame" x="8" y="96" width="398" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavRestaurantTableCell" textLabel="nfi-Kr-fbz" detailTextLabel="xq4-VS-sEg" imageView="ZAy-JY-1zJ" style="IBUITableViewCellStyleSubtitle" id="VFN-c9-JlJ">
-                                        <rect key="frame" x="0.0" y="28" width="398" height="55.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="398" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VFN-c9-JlJ" id="dYg-8A-3KJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="398" height="55.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nfi-Kr-fbz">
-                                                    <rect key="frame" x="101" y="10" width="33" height="20.5"/>
+                                                    <rect key="frame" x="187" y="44" width="33" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xq4-VS-sEg">
-                                                    <rect key="frame" x="101" y="31.5" width="44" height="14.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xq4-VS-sEg">
+                                                    <rect key="frame" x="187" y="67.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="launch" id="ZAy-JY-1zJ">
-                                                    <rect key="frame" x="20" y="0.0" width="66" height="55.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="152" height="128"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -196,26 +196,26 @@
                                     <constraint firstAttribute="height" constant="200" id="CZB-cz-QXL"/>
                                 </constraints>
                             </mapView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bAC-LY-cVB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="128" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bAC-LY-cVB">
                                 <rect key="frame" x="8" y="296" width="398" height="509"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoundRestaurantTableCell" textLabel="o5X-Hj-0R3" detailTextLabel="mvo-DD-POm" rowHeight="200" style="IBUITableViewCellStyleSubtitle" id="yC0-aZ-UN0">
-                                        <rect key="frame" x="0.0" y="28" width="398" height="200"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoundRestaurantTableCell" textLabel="o5X-Hj-0R3" detailTextLabel="mvo-DD-POm" style="IBUITableViewCellStyleSubtitle" id="yC0-aZ-UN0">
+                                        <rect key="frame" x="0.0" y="28" width="398" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yC0-aZ-UN0" id="338-F9-bbH">
-                                            <rect key="frame" x="0.0" y="0.0" width="398" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o5X-Hj-0R3">
-                                                    <rect key="frame" x="20" y="80" width="33" height="20.5"/>
+                                                    <rect key="frame" x="20" y="44" width="33" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mvo-DD-POm">
-                                                    <rect key="frame" x="20" y="103.5" width="44" height="14.5"/>
+                                                <label opaque="NO" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mvo-DD-POm">
+                                                    <rect key="frame" x="20" y="67.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -321,8 +321,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9Dt-xF-BgC"/>
-        <segue reference="BrL-j6-7u4"/>
+        <segue reference="z9o-Ub-lYr"/>
+        <segue reference="COz-Dz-EAR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>

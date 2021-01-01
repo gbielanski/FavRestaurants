@@ -27,7 +27,7 @@ class FavRestaurantsListViewController: UIViewController{
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-
+    self.tabBarController?.tabBar.isHidden = false
     setupFetchedResultController()
 
     if fetchedResultsController.sections?[0].numberOfObjects ?? 0 > 0 {
@@ -90,10 +90,6 @@ extension FavRestaurantsListViewController: UITableViewDelegate, UITableViewData
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return fetchedResultsController.sections?[0].numberOfObjects ?? 0
-  }
-
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 128
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
