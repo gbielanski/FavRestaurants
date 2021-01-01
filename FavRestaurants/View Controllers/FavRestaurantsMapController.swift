@@ -28,6 +28,7 @@ class FavRestaurantsMapViewController: UIViewController{
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    self.tabBarController?.tabBar.isHidden = false
 
     setupFetchedResultController()
 
@@ -41,7 +42,6 @@ class FavRestaurantsMapViewController: UIViewController{
 
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
-    self.tabBarController?.tabBar.isHidden = false
     fetchedResultsController = nil
   }
 
@@ -79,7 +79,7 @@ class FavRestaurantsMapViewController: UIViewController{
       let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
       let annotation = FavPointAnnotation()
       annotation.coordinate = coordinate
-      annotation.title = "\(fav.name)"
+      annotation.title = fav.name ?? "Restaurant"
       annotation.restaurant = fav.toRestaurnt()
       self.mapView.addAnnotation(annotation)
     }
@@ -98,7 +98,7 @@ extension FavRestaurantsMapViewController: NSFetchedResultsControllerDelegate{
       let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
       let annotation = MKPointAnnotation()
       annotation.coordinate = coordinate
-      annotation.title = "\(fav.name)"
+      annotation.title = fav.name ?? "Restaurant"
       self.mapView.addAnnotation(annotation)
       break
     case .delete:
