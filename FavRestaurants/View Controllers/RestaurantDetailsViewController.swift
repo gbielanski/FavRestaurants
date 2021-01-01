@@ -23,7 +23,13 @@ class RestaurantDetailsViewController: UIViewController{
     favRestaurant.latitude = Double(restaurant.data.location.latitude) ?? 0.0
     favRestaurant.longitude = Double(restaurant.data.location.longitude) ?? 0.0
 
-    try? dataController.viewContext.save()
+    do {
+      try dataController.viewContext.save()
+    }catch {
+      showAllert(title: "Failed", message: error.localizedDescription)
+    }
+
+    showAllert(title: "Success", message: "Added to favourite")
   }
 
   var dataController: DataController!
@@ -38,6 +44,16 @@ class RestaurantDetailsViewController: UIViewController{
       favButton.image = UIImage(systemName: "heart.fill")
     } else {
       favButton.image = UIImage(systemName: "heart")
+    }
+  }
+
+  private func showAllert(title: String, message: String) {
+    let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    alertVC.addAction(UIAlertAction(title: "OK", style: .default){ action in
+      self.navigationController?.popViewController(animated: true)
+    })
+    present(alertVC, animated: true){
+      self.performSegue(withIdentifier: "fromDetails", sender: self)
     }
   }
 

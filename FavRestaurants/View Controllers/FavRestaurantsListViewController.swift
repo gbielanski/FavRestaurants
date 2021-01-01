@@ -19,6 +19,9 @@ class FavRestaurantsListViewController: UIViewController{
     self.performSegue(withIdentifier: "findRestaurantFromList", sender: nil)
   }
 
+  @IBAction func unwindToFirstVC( _ seg: UIStoryboardSegue) {
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.delegate = self

@@ -317,15 +317,17 @@
                     <connections>
                         <outlet property="favButton" destination="uga-nj-lWw" id="13T-kx-LXJ"/>
                         <outlet property="restaurantName" destination="4Uu-In-0Wb" id="coX-J0-Pau"/>
+                        <segue destination="Rw3-XH-Cck" kind="unwind" identifier="fromDetails" unwindAction="unwindToFirstVC:" id="2HE-kT-t0Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dqb-H6-iEZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Rw3-XH-Cck" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3128" y="400"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="V2Q-bi-4Ti"/>
+        <segue reference="z9o-Ub-lYr"/>
         <segue reference="COz-Dz-EAR"/>
     </inferredMetricsTieBreakers>
     <resources>
