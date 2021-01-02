@@ -28,8 +28,8 @@ class FindRestaurantViewController: UIViewController {
     showNetworkCall(inProgress: true)
     // Warsaw Centrum
     ZomatoClient.getRestaurantsInLocation(lat: 52.231003, lon: 21.011682){ restaurants, error in
-    // Zielonka
-    // ZomatoClient.getRestaurantsInLocation(lat: 52.313758, lon: 21.170652){ restaurants, error in
+      // Zielonka
+      // ZomatoClient.getRestaurantsInLocation(lat: 52.313758, lon: 21.170652){ restaurants, error in
       if let error = error {
         self.showFailure(message: error.localizedDescription)
         return

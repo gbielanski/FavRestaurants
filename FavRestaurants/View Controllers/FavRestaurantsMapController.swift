@@ -73,7 +73,16 @@ class FavRestaurantsMapViewController: UIViewController{
 
   private func updateMap(){
     self.mapView.removeAnnotations(self.mapView.annotations)
+
+    var isFirstElement = true
+
     fetchedResultsController.fetchedObjects?.forEach{ fav in
+
+      if isFirstElement {
+        centerMap(fav: fav)
+        isFirstElement = false
+      }
+
       let lat = CLLocationDegrees(fav.latitude)
       let long = CLLocationDegrees(fav.longitude)
       let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
@@ -83,6 +92,15 @@ class FavRestaurantsMapViewController: UIViewController{
       annotation.favRestaurant = fav
       self.mapView.addAnnotation(annotation)
     }
+  }
+
+  private func centerMap(fav: FavRestaurant){
+    let centerLocation = CLLocation(
+      latitude: fav.latitude,
+      longitude: fav.longitude)
+    let span = MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
+    let region = MKCoordinateRegion(center: centerLocation.coordinate, span: span)
+    mapView.setRegion(region, animated: false)
   }
 }
 
