@@ -76,6 +76,10 @@ class FindRestaurantViewController: UIViewController {
       return
     }
 
+    restaurants?.forEach { restaurant in
+      restaurant.data.highlightsString = restaurant.data.highlights.joined(separator: ", ")
+    }
+
     self.restaurants = restaurants
     self.showNetworkCall(inProgress: false)
 

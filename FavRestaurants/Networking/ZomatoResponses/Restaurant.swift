@@ -23,12 +23,19 @@ class RestaurantData: Codable{
   let name: String
   let location: Location
   let thumb: String
+  let timings: String
+  let cuisines: String
+  let highlights: [String]
   var imageData: Data?
+  var highlightsString: String?
   
-  init(name: String, location: Location, thumb: String = "") {
+  init(name: String, location: Location, thumb: String = "", timings: String, cuisines: String, highlights: [String]) {
     self.name = name
     self.location = location
     self.thumb = thumb
+    self.timings = timings
+    self.cuisines = cuisines
+    self.highlights = highlights
   }
 }
 
