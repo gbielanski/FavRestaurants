@@ -26,9 +26,10 @@ class FindRestaurantViewController: UIViewController {
     showNetworkCall(inProgress: true)
     CLGeocoder().geocodeAddressString(locationDescription ?? "", completionHandler: handleGeocodeAddressString)
   }
+
   var dataController: DataController!
-  
   var restaurants: [Restaurant]?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.delegate = self

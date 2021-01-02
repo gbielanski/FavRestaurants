@@ -58,8 +58,6 @@ class FavRestaurantsListViewController: UIViewController{
 
   fileprivate func setupFetchedResultController() {
     let fetchRequest: NSFetchRequest<FavRestaurant> = FavRestaurant.fetchRequest()
-
-    //TODO Add sort by name
     fetchRequest.sortDescriptors = []
 
     fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: "fav")
