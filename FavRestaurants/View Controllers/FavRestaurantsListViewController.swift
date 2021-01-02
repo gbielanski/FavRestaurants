@@ -126,14 +126,4 @@ extension FavRestaurantsListViewController: NSFetchedResultsControllerDelegate{
       break
     }
   }
-
-  func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
-    let indexSet = IndexSet(integer: sectionIndex)
-     switch type {
-     case .insert: tableView.insertSections(indexSet, with: .fade)
-     case .delete: tableView.deleteSections(indexSet, with: .fade)
-     case .update, .move:
-         fatalError("Invalid change type in controller(_:didChange:atSectionIndex:for:). Only .insert or .delete should be possible.")
-     }
-  }
 }

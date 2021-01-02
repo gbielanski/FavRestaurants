@@ -53,8 +53,16 @@ class ZomatoClient {
 
   class func downloadImage(path: String, completionHandler: @escaping (Data?, Error?) -> Void){
     let download = URLSession.shared.dataTask(with: Endpoints.downloadImage(path).url){ (data, _, error) in
+
+      if let error = error {
+        DispatchQueue.main.async {
+          completionHandler(nil, error)
+        }
+        return
+      }
+
       DispatchQueue.main.async {
-        completionHandler(data, error)
+        completionHandler(data, nil)
       }
     }
 

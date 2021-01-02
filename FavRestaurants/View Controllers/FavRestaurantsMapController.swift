@@ -120,14 +120,10 @@ extension FavRestaurantsMapViewController: NSFetchedResultsControllerDelegate{
       self.mapView.addAnnotation(annotation)
       break
     case .delete:
-      let fav = fetchedResultsController.object(at: indexPath!)
-      //TODO
       break
     case .update:
-      //TODO
       break
     case .move:
-      // TODO
       break
     @unknown default:
       break

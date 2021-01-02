@@ -123,7 +123,7 @@ extension FindRestaurantViewController: UITableViewDelegate, UITableViewDataSour
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "FoundRestaurantTableCell")!
-    var restaurant = restaurants![(indexPath as NSIndexPath).row]
+    let restaurant = restaurants![(indexPath as NSIndexPath).row]
     
     cell.textLabel?.text = restaurant.data.name
     cell.detailTextLabel?.text = restaurant.data.location.address
@@ -133,15 +133,18 @@ extension FindRestaurantViewController: UITableViewDelegate, UITableViewDataSour
     
     if !path.isEmpty {
       ZomatoClient.downloadImage(path: path){ data, error in
-        guard let data = data else {
+        if let error = error {
+          self.showFailure(message: error.localizedDescription)
           return
         }
 
-        restaurant.data.imageData = data
-        
-        if let image = UIImage(data: data){
-          cell.imageView?.image = image
-          cell.setNeedsLayout()
+        if let data = data {
+          restaurant.data.imageData = data
+
+          if let image = UIImage(data: data){
+            cell.imageView?.image = image
+            cell.setNeedsLayout()
+          }
         }
       }
     }
