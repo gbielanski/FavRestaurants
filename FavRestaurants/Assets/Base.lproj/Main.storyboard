@@ -239,31 +239,65 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="cyt-eo-xJb">
                                 <rect key="frame" x="188.5" y="506" width="37" height="37"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looking for a restaurant in this area" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDy-MB-J4R">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looking for a restaurant ..." textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDy-MB-J4R">
                                 <rect key="frame" x="16" y="435.5" width="382" height="30.5"/>
                                 <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter location:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NT4-p9-gOA">
+                                <rect key="frame" x="16" y="304" width="382" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2qT-7H-v3d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B6e-Ag-e30" userLabel="Enter location Text Field">
+                                <rect key="frame" x="16" y="360" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2y-JO-KhV">
+                                <rect key="frame" x="16" y="410" width="382" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Iep-fq-Q3n"/>
+                                </constraints>
+                                <state key="normal" title="Find"/>
+                                <connections>
+                                    <action selector="findButtonTapped:" destination="V54-8J-sag" eventType="touchUpInside" id="WBR-d3-K09"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6xj-lS-KfT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eaW-VP-qVC" firstAttribute="top" secondItem="6xj-lS-KfT" secondAttribute="top" id="0SA-sY-Ky8"/>
                             <constraint firstItem="6xj-lS-KfT" firstAttribute="trailing" secondItem="eaW-VP-qVC" secondAttribute="trailing" id="0nH-7B-Lh0"/>
+                            <constraint firstItem="6xj-lS-KfT" firstAttribute="trailing" secondItem="NT4-p9-gOA" secondAttribute="trailing" constant="16" id="5BL-gN-RiX"/>
+                            <constraint firstItem="B6e-Ag-e30" firstAttribute="leading" secondItem="6xj-lS-KfT" secondAttribute="leading" constant="16" id="7AS-bT-jVI"/>
                             <constraint firstItem="VDy-MB-J4R" firstAttribute="centerX" secondItem="6xj-lS-KfT" secondAttribute="centerX" id="8w0-f7-TJR"/>
                             <constraint firstItem="3bc-Hm-QGT" firstAttribute="leading" secondItem="6xj-lS-KfT" secondAttribute="leading" constant="16" id="AGm-xV-vgW"/>
+                            <constraint firstItem="NT4-p9-gOA" firstAttribute="leading" secondItem="6xj-lS-KfT" secondAttribute="leading" constant="16" id="ASo-WJ-0tj"/>
+                            <constraint firstItem="6xj-lS-KfT" firstAttribute="trailing" secondItem="i2y-JO-KhV" secondAttribute="trailing" constant="16" id="C10-a0-Yy2"/>
                             <constraint firstItem="6xj-lS-KfT" firstAttribute="trailing" secondItem="bAC-LY-cVB" secondAttribute="trailing" constant="8" id="Gjx-8p-yNd"/>
+                            <constraint firstItem="6xj-lS-KfT" firstAttribute="trailing" secondItem="B6e-Ag-e30" secondAttribute="trailing" constant="16" id="JD9-zc-jbK"/>
                             <constraint firstItem="bAC-LY-cVB" firstAttribute="leading" secondItem="6xj-lS-KfT" secondAttribute="leading" constant="8" id="Lme-ox-EZB"/>
                             <constraint firstItem="3bc-Hm-QGT" firstAttribute="bottom" secondItem="VDy-MB-J4R" secondAttribute="top" constant="16" id="N74-DP-85g"/>
                             <constraint firstItem="eaW-VP-qVC" firstAttribute="leading" secondItem="6xj-lS-KfT" secondAttribute="leading" id="WaB-bG-NcH"/>
                             <constraint firstItem="6xj-lS-KfT" firstAttribute="bottom" secondItem="bAC-LY-cVB" secondAttribute="bottom" constant="8" id="YvP-l0-OGP"/>
                             <constraint firstItem="VDy-MB-J4R" firstAttribute="leading" secondItem="6xj-lS-KfT" secondAttribute="leading" constant="16" id="bD4-c3-fU7"/>
+                            <constraint firstItem="B6e-Ag-e30" firstAttribute="top" secondItem="NT4-p9-gOA" secondAttribute="bottom" constant="16" id="dmr-xP-eKX"/>
                             <constraint firstItem="cyt-eo-xJb" firstAttribute="top" secondItem="VDy-MB-J4R" secondAttribute="bottom" constant="40" id="fjr-5i-qu6"/>
+                            <constraint firstItem="NT4-p9-gOA" firstAttribute="top" secondItem="eaW-VP-qVC" secondAttribute="bottom" constant="16" id="iF8-Gf-0zY"/>
                             <constraint firstItem="6xj-lS-KfT" firstAttribute="trailing" secondItem="3bc-Hm-QGT" secondAttribute="trailing" constant="16" id="lMi-p7-DuE"/>
                             <constraint firstItem="cyt-eo-xJb" firstAttribute="centerX" secondItem="6xj-lS-KfT" secondAttribute="centerX" id="nZr-1W-Aii"/>
                             <constraint firstItem="bAC-LY-cVB" firstAttribute="top" secondItem="eaW-VP-qVC" secondAttribute="bottom" constant="8" id="rrY-HK-gRu"/>
+                            <constraint firstItem="i2y-JO-KhV" firstAttribute="top" secondItem="B6e-Ag-e30" secondAttribute="bottom" constant="16" id="vRl-hl-bQf"/>
+                            <constraint firstItem="i2y-JO-KhV" firstAttribute="top" secondItem="B6e-Ag-e30" secondAttribute="bottom" constant="16" id="wLG-Hs-Ch7"/>
                             <constraint firstItem="VDy-MB-J4R" firstAttribute="centerY" secondItem="6xj-lS-KfT" secondAttribute="centerY" id="wa4-pH-pai"/>
+                            <constraint firstItem="i2y-JO-KhV" firstAttribute="leading" secondItem="6xj-lS-KfT" secondAttribute="leading" constant="16" id="xkd-e3-Iha"/>
                             <constraint firstItem="cyt-eo-xJb" firstAttribute="centerX" secondItem="VDy-MB-J4R" secondAttribute="centerX" id="yeo-Ur-nB4"/>
                         </constraints>
                     </view>
@@ -271,6 +305,9 @@
                     <connections>
                         <outlet property="activityIndicator" destination="cyt-eo-xJb" id="tkf-wS-QRc"/>
                         <outlet property="couldNotFind" destination="3bc-Hm-QGT" id="qyZ-Pc-cWh"/>
+                        <outlet property="enterLocation" destination="B6e-Ag-e30" id="ca9-3S-jyu"/>
+                        <outlet property="enterLocationLabel" destination="NT4-p9-gOA" id="4V0-tG-BZO"/>
+                        <outlet property="findButton" destination="i2y-JO-KhV" id="ZDK-lQ-c5t"/>
                         <outlet property="lookingForLabel" destination="VDy-MB-J4R" id="Dko-4t-6n5"/>
                         <outlet property="mapView" destination="eaW-VP-qVC" id="g8S-F3-lph"/>
                         <outlet property="tableView" destination="bAC-LY-cVB" id="zlw-0V-WTm"/>

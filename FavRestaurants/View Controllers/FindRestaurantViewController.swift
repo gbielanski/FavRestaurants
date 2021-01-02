@@ -17,6 +17,15 @@ class FindRestaurantViewController: UIViewController {
   @IBOutlet weak var lookingForLabel: UILabel!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
+  @IBOutlet weak var enterLocationLabel: UILabel!
+  @IBOutlet weak var enterLocation: UITextField!
+  @IBOutlet weak var findButton: UIButton!
+  @IBAction func findButtonTapped(_ sender: Any) {
+    let locationDescription = enterLocation.text
+    showEnterLocation(show: false)
+    showNetworkCall(inProgress: true)
+    CLGeocoder().geocodeAddressString(locationDescription ?? "", completionHandler: handleGeocodeAddressString)
+  }
   var dataController: DataController!
   
   var restaurants: [Restaurant]?
@@ -25,26 +34,7 @@ class FindRestaurantViewController: UIViewController {
     tableView.delegate = self
     tableView.dataSource = self
     mapView.delegate = self
-    showNetworkCall(inProgress: true)
-    // Warsaw Centrum
-    ZomatoClient.getRestaurantsInLocation(lat: 52.231003, lon: 21.011682){ restaurants, error in
-      // Zielonka
-      // ZomatoClient.getRestaurantsInLocation(lat: 52.313758, lon: 21.170652){ restaurants, error in
-      if let error = error {
-        self.showFailure(message: error.localizedDescription)
-        return
-      }
-      
-      self.restaurants = restaurants
-      self.showNetworkCall(inProgress: false)
-      
-      if restaurants?.count == 0 {
-        self.showNoResults()
-      }else{
-        self.tableView.reloadData()
-        self.updateMap()
-      }
-    }
+    showEnterLocation(show: true)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -60,11 +50,56 @@ class FindRestaurantViewController: UIViewController {
       findDetailsVC.isFav = false
     }
   }
+
+  private func handleGeocodeAddressString(marker: [CLPlacemark]?, error: Error?) -> Void{
+    if let error = error {
+      self.showFailure(message: error.localizedDescription)
+    } else {
+      var location: CLLocation?
+
+      if let marker = marker, marker.count > 0 {
+        location = marker.first?.location
+      }
+
+      if let location = location {
+        ZomatoClient.getRestaurantsInLocation(lat: location.coordinate.latitude , lon: location.coordinate.longitude , completion: handleGetRestaurantsInLocation)
+      } else {
+        self.showEnterLocation(show: false)
+        self.showFailure(message: "Please try again later.")
+      }
+    }
+  }
+
+  private func handleGetRestaurantsInLocation(restaurants: [Restaurant]?, error: Error?) -> Void{
+    if let error = error {
+      self.showFailure(message: error.localizedDescription)
+      return
+    }
+
+    self.restaurants = restaurants
+    self.showNetworkCall(inProgress: false)
+
+    if restaurants?.count == 0 {
+      self.showNoResults()
+    }else{
+      self.tableView.reloadData()
+      self.updateMap()
+    }
+  }
   
   private func showNetworkCall(inProgress: Bool){
     tableView.isHidden = inProgress
     lookingForLabel.isHidden = !inProgress
     activityIndicator.isHidden = !inProgress
+  }
+
+  private func showEnterLocation(show: Bool){
+    enterLocation.isHidden = !show
+    enterLocationLabel.isHidden = !show
+    findButton.isHidden = !show
+    tableView.isHidden = show
+    lookingForLabel.isHidden = show
+    activityIndicator.isHidden = show
   }
   
   private func showNoResults(){
